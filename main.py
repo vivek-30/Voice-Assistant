@@ -1,5 +1,6 @@
 import pyttsx3
 import speech_recognition as sr
+from time import ctime
 
 name = 'jarvis'
 
@@ -39,6 +40,27 @@ def execute_command(command):
     elif 'exit' in command or 'quit' in command:
         engine.stop()
         exit()
+
+    elif 'time' in command:
+        tell_time = ctime()
+        print(tell_time)
+        speak(f'current time is {tell_time}')
+        
+    elif 'create' in command and 'file' in command:
+
+        file_name = take_command('give file name')
+
+        if 'text' in command or 'simple' in command:
+            file_name = file_name+'.txt'
+    
+        elif ' dot ' in file_name:
+            file_name = file_name.replace(' dot ','.')
+        new_file = open(file_name,'w')
+        command = take_command(f'would you like to add something your {new_file} file')
+        if command in "yes ok yaah yup hmmm y":
+            content = take_command('ok sir tell me what to add')
+            new_file.write(content)
+        new_file.close()
 
 if __name__ == '__main__':
     while True:
