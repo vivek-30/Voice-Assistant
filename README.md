@@ -13,7 +13,7 @@
 
 ## Setup and Installation -
 
-- Install MySQL [click here to Download]("https://www.mysql.com/downloads/") ( for Mac OS users  `brew install mysql` if brew is installed )
+- Install MySQL [click here to Download](https://www.mysql.com/downloads/) ( for Mac OS users  `brew install mysql` if brew is installed )
 
 - start your mysql server with `mysql.server start`
 
