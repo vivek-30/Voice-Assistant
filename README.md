@@ -55,6 +55,7 @@
 - Feedback Support
 - Get Time Update
 - Open any app
+- Listen any Song
 - Create any file and write content inside it
 - Capture Photos
 - Capture ScreenShots
@@ -64,6 +65,7 @@
 
 - Tell me the time
 - Tell me your name
+- Play a song
 - Give/Provide me the weather report
 - Capture/Take/Click a photo/picture
 - Capture screenshot

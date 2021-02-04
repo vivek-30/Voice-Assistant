@@ -146,13 +146,13 @@ def authenticate():
         speak('ok sir welcome to my service i will need your details to use this service') 
         take_user_name()
         speak('tell me your gender')
-        gender = input('enter gender m/f or male/female').lower()
+        gender = input('enter gender male/female : ').lower()
         if gender == 'male' or gender == 'm':
             gender = 'M'
         else:
             gender = 'F'
         speak('set a password')
-        password = input('Password: ')
+        password = input('Password: ').strip()
         response = add_new_user(password,gender)
     
     return response
@@ -282,8 +282,8 @@ def execute_command(command):
         elif ' dot ' in file_name:
             file_name = file_name.replace(' dot ','.')
         new_file = open(file_name,'w')
-        command = take_command(f'would you like to add something your {new_file} file')
-        if command in "yes ok yaah yup hmmm y":
+        command = take_command(f'would you like to add something your {file_name} file')
+        if 'yes' in command or 'hmm' in command or 'ok' in command or 'sure' in command:
             content = take_command('ok sir tell me what to add')
             new_file.write(content)
         new_file.close()
@@ -303,13 +303,14 @@ def execute_command(command):
         img.show()
         delete_image(screenshot_name)
 
-    # elif ('play' in command) and ('random' in command or 'one more' in command or 'onother' in command) and ('song' in command or 'music' in command):
-    #     random_num = 0
-    #     music_folder = os.path.expanduser('~')+'/Documents/Songs'
-    #     random_num = randrange(0,len(os.listdir(music_folder)))
-    #     music_folder = music_folder[random_num]
-    #     if sys.platform == "darwin":
-    #         call(['open', music_folder])
+    elif 'play' in command and 'song' in command:
+        random_num = 0
+        music_folder = os.path.expanduser('~')+'/Documents/Songs/'
+        songs = os.listdir(music_folder)
+        random_num = randrange(0,len(songs))
+        music_folder = music_folder + songs[random_num]
+        if sys.platform == "darwin":
+            call(['open', music_folder])
 
     elif (('search' in command  or 'find' in command or 'display' in command or 'show' in command) and ('youtube' not in command)):
         search_item = manage_search(command)
@@ -345,6 +346,8 @@ def execute_command(command):
 
     elif 'wikipedia' in command or 'wiki' in command:
         command = command.replace('wikipedia','')
+        if 'give me' in command:
+            command = command.replace('give me','')
         speak('how many lines do you want in your results')
         lines = int(input('=> '))
 
