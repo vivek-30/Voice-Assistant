@@ -49,6 +49,7 @@
 - MySQL Support (To authenticate Jarvis users)
 - Google Search Support
 - Wikipedia Support
+- Get News Update
 - Youtube Support
 - Command Line Support
 - Get Weather report
@@ -73,6 +74,7 @@
 - Search/Find/Show < anything > on/in youtube
 - Gave me wikipedia of < something >
 - Can give feedback like good job, nice work , poor service
+- Give/Provide News Update/Feeds
 - Create a file
 - Open a App/Application
 - Exit
