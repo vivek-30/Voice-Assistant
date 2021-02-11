@@ -67,7 +67,11 @@ def get_wiki(command):
     elif lines > 10:
         speak('this is too much data this permission is not allowed by vivek')
     else:
-        results = wikipedia.summary(command,sentences = lines)
-        speak('here is what all i have found regarding '+command)
-        print(results)
-        speak(results)
+        try:
+            results = wikipedia.summary(command,sentences = lines)
+            speak('here is what all i have found regarding '+command)
+            print(results)
+            speak(results)
+        except:
+            print('Please try again later!')
+            speak('something went wrong please try after some time')

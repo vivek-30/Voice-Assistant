@@ -57,8 +57,7 @@ def execute_command(command):
 
 if __name__ == '__main__':
 
-    # response = initiate()
-    response = '200'
+    response = initiate()
     if response == '200':
         greet()
         while True:

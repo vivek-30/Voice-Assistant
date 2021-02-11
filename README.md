@@ -1,7 +1,8 @@
 ## Voice Assistance
 
-### A fully automated Voice Assistance ( Jarvis ) built with python.
-### It will help you handle your task easily and efficiently and makes your life easy.
+- A fully automated Voice Assistance ( Jarvis ) built with python.
+
+- It will help you handle your task easily and efficiently and makes your life easy.
 
 ## Prerequisite -
 
