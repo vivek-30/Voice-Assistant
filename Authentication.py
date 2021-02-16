@@ -1,5 +1,11 @@
 import mysql.connector
+from time import sleep
+from subprocess import call
+from sys import platform
+from CLI_Functions import start_mysql_server
 from core_functions import speak,take_command
+
+start_mysql_server()
 
 mydbs = mysql.connector.connect(host = "localhost",user = "root",passwd = "",db = "jarvis_users")
 mycursor = mydbs.cursor(buffered = True)

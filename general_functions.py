@@ -1,6 +1,7 @@
 from datetime import datetime as dt
 from Authentication import user_name
 from core_functions import speak,name,take_command,engine
+from CLI_Functions import stop_mysql_server
 from time import ctime
 
 def greet():
@@ -58,6 +59,7 @@ def create_file(command):
     new_file.close()
 
 def custom_exit():
+    stop_mysql_server() # Stops the msql server before exiting
     print('Sir i am happy to help you , please visit again')
     engine.stop()
     exit()

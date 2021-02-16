@@ -51,6 +51,7 @@
 - Google Search Support
 - Wikipedia Support
 - Get News Update
+- Auto Start/Stop MySQL Server
 - Youtube Support
 - Command Line Support
 - Get Weather report
@@ -85,6 +86,3 @@
 - Above mentioned command are not very strict their is much flexibily exists. These are just for Refference.
 
 - some IDE dont allow you to use your default microphone in this case you must run this service from Command Line
-
-- Dont forget to stop mysql server after the usage of this service `mysql.server stop`
-
