@@ -6,3 +6,4 @@ PyAudio==0.2.11
 pyttsx3==2.90
 SpeechRecognition==3.8.1
 wikipedia==1.4.0
+inquirer==2.7.0
