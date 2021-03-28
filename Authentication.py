@@ -69,7 +69,7 @@ def add_new_user(password,gender):
     result = mycursor.fetchone()
 
     if result:
-        print(f'{mycursor.rowcount} new user added with name = \"{user_name}\"')
+        print(f'{mycursor.rowcount} new user added with name {user_name}')
         speak('you have successfully joined welcome to jarvis community')
         print('Thanks for joining')
         return '200'

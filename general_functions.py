@@ -2,6 +2,7 @@ from datetime import datetime as dt
 from Authentication import user_name
 from core_functions import speak,name,take_command,engine
 from CLI_Functions import stop_mysql_server
+from inquirer import List, prompt
 from time import ctime
 
 def greet():
@@ -42,6 +43,21 @@ def tell_name():
     tell_name = f'My name is {name}'
     speak(tell_name)
     print(tell_name)
+
+def get_input_value(total_values = 10):
+
+    question = [ List('value', message='Quantity: ', choices=['1', '5', '10', 'All', 'Custom']) ]
+    answer = prompt(question)
+    answer = answer['value']
+    total = total_values
+    if answer == 'Custom':
+        total = int(input('Enter value : '))
+    elif answer == 'All':
+        total = total_values
+    else:
+        total = int(answer)
+    
+    return total
 
 def create_file(command):
     file_name = take_command('give file name')

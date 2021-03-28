@@ -1,6 +1,7 @@
 import webbrowser
 import wikipedia
 from core_functions import speak
+from general_functions import get_input_value
 
 def manage_search(query):
 
@@ -60,8 +61,7 @@ def get_wiki(command):
     if 'give me' in command:
         command = command.replace('give me','')
     speak('how many lines do you want in your results')
-    lines = int(input('=> '))
-
+    lines = get_input_value()
     if lines <= 0:
         speak('provide a feasible number')
     elif lines > 10:
