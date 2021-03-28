@@ -28,4 +28,4 @@ def take_command(ask = False):
             speak('sir please speak again')
         except sr.RequestError:
             speak('sir either you are not connected to internet or there is something wrong with your microphone please try after some time')
-        return command
+        return command.strip()

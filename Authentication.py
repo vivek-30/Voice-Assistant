@@ -5,6 +5,7 @@ from sys import platform
 from CLI_Functions import start_mysql_server
 from core_functions import speak,take_command
 from inquirer import List, prompt
+from getpass import getpass
 
 start_mysql_server()
 
@@ -117,7 +118,7 @@ def authenticate():
         take_user_name()
         if user_name.strip() != '':
             speak('Enter your Password')
-            password = input('Password:').strip()
+            password = getpass(prompt='Password: ').strip()
             response =  verify_user(password)
 
     elif 'new' in command:
@@ -127,7 +128,7 @@ def authenticate():
         question = [ List('gender', message="Your Gender: ", choices=[ 'Male', 'Female' ]) ]
         answer = prompt(question) 
         speak('set a password')
-        password = input('Password: ').strip()
+        password = getpass(prompt='Password: ').strip()
         response = add_new_user(password, answer['gender'])
     
     return response
