@@ -4,6 +4,7 @@ from subprocess import call
 from sys import platform
 from CLI_Functions import start_mysql_server
 from core_functions import speak,take_command
+from inquirer import List, prompt
 
 start_mysql_server()
 
@@ -35,7 +36,7 @@ def add_new_user(password,gender):
         mycursor.execute(search_query)
         result = mycursor.fetchone()
 
-        if gender == 'M':
+        if gender == 'Male':
             gen = 'sir'
         else:
             gen = 'mam'
@@ -53,7 +54,7 @@ def add_new_user(password,gender):
             speak(f'{gen} please choose a different password')
             return '405'
         
-    add_query = f'INSERT INTO users (name,password,gender) VALUES (\"{user_name}\",\"{password}\",\"{gender}\")'
+    add_query = f'INSERT INTO users (name,password,gender) VALUES (\"{user_name}\",\"{password}\",\"{gender[0]}\")'
     mycursor.execute(add_query)
     mydbs.commit()
     
@@ -123,14 +124,11 @@ def authenticate():
         speak('ok sir welcome to my service i will need your details to use this service') 
         take_user_name()
         speak('tell me your gender')
-        gender = input('enter gender male/female : ').lower()
-        if gender == 'male' or gender == 'm':
-            gender = 'M'
-        else:
-            gender = 'F'
+        question = [ List('gender', message="Your Gender: ", choices=[ 'Male', 'Female' ]) ]
+        answer = prompt(question) 
         speak('set a password')
         password = input('Password: ').strip()
-        response = add_new_user(password,gender)
+        response = add_new_user(password, answer['gender'])
     
     return response
 

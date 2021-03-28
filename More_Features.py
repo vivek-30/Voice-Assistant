@@ -4,6 +4,7 @@ from time import sleep,ctime
 from core_functions import speak,take_command
 from PIL import Image
 from CLI_Functions import remove
+from inquirer import List, prompt
 
 def read_news_feeds(feeds):
     total_feeds = feeds['totalResults']
@@ -11,7 +12,13 @@ def read_news_feeds(feeds):
         speak('no news feed available')
     else:
         speak(f'there are total {total_feeds} news update how many feeds do you want to hear')
-        total = int(input('=> '))
+        question = [ List('value', message='=> ', choices=['1', '5', '10', 'All']) ]
+        answer = prompt(question)
+        total = answer['value']
+        if total == 'All':
+            total = total_feeds
+        else:
+            total = int(total)
         if total > total_feeds or total <= 0:
             speak('sorry but you have demanded non feasible amount')
         else:
