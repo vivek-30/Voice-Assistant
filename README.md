@@ -1,6 +1,6 @@
 ## Voice Assistance
 
-- A fully automated Voice Assistance ( Jarvis ) built with python.
+- A Fully automated Voice Assistance ( Jarvis ) built with python.
 
 - It will help you handle your task easily and efficiently and makes your life easy.
 
@@ -10,7 +10,7 @@
 
 - `Internet Connectivity` should be provided.
 
-- last but not the least `Python` is a must have requirement for this to work.
+- Last but not the least `Python` is a must have requirement for this to work.
 
 ## Setup and Installation -
 
@@ -38,11 +38,12 @@
 
 - install portaudio `brew install portaudio` (only for Mac OS X users)
 
-- clone the repo and navigate into it
+- clone this repository and navigate into it.
 
 - install all dependencies `pip3 install -r requirements.txt`
 
-- lastly make sure you have connected to a decent internet connection.
+- Lastly make sure you have connected to a decent internet connection.
+
 - 🥳 Wooho you have completed all the steps now just run this last command `python3 main.py` in your CLI (teminal,command prompt).
 
 ## Features -
@@ -83,6 +84,6 @@
 
 #### Note  - 
 
-- Above mentioned command are not very strict their is much flexibily exists. These are just for Refference.
+- Above mentioned command are not very strict, there is much flexibility exists. These are just for Reference Purpose.
 
-- some IDE dont allow you to use your default microphone in this case you must run this service from Command Line
+- Some IDE don't allow you to use your default microphone in that case you have to run this service from Command Line Interface.
