@@ -12,7 +12,7 @@ def read_news_feeds(feeds):
         speak('no news feed available')
     else:
         speak(f'there are total {total_feeds} news update how many feeds do you want to hear')
-        question = [ List('value', message='=> ', choices=['1', '5', '10', 'All']) ]
+        question = [ List('value', message='Quantity: ', choices=['1', '5', '10', 'All']) ]
         answer = prompt(question)
         total = answer['value']
         if total == 'All':

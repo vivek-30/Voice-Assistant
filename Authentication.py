@@ -27,6 +27,11 @@ def take_user_name(string = ''):
 def add_new_user(password,gender):
 
     global user_name
+    if user_name == '':
+        speak('sorry sir i am unable to grab your name please try again later')
+        print('Empty name are not allowed')
+        return '501'
+
     print('Joining ...')
     speak('please wait a momment we are joining you to our community')
 
